@@ -1,17 +1,24 @@
 a simple project to show how to use the confluent schema registry together with spring-boot-kafka.
 
+# Comment
+
+- When project is loaded an error related to avro-maven-plugin occurs. Ignore it.
+- BASH: mvn generate-sources
+- Right-click on project, Maven -> Update project
+- do last two points everytime .avsc files are changed.
+
 # confluent platform
 
 For this test project I use the [Confuent Open Source](https://www.confluent.io/download/) platform.
 After downloading and unpacking I start (on macOS) the required components (Zookeepe, Kafka, Schema Registry etc) with:
 
     bin/confluent start
-    
+
 # building and running the program
 
     mvn spring-boot:run
-    
-is all what is needed. It starts up the program, sets up a KafkaListener, produces the configured number of records 
+
+is all what is needed. It starts up the program, sets up a KafkaListener, produces the configured number of records
 into Kafka, consumes them and then shuts down the Listener and so ends the program.
 
 sample run:
